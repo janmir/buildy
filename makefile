@@ -6,3 +6,9 @@ build-dev:
 
 build-release:
 	go build -tags release
+
+push:
+	git add .
+	#m=""
+	git commit -m "🚀 $(m)"
+	git push
