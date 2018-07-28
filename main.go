@@ -134,18 +134,10 @@ func main() {
 
 	logger("len: %d\n", mainMax)
 
-	sname = makeTop(_name)
-	appendString(sname)
-
-	sdate = makeBody(sdate)
-	appendString(sdate)
-
-	sversion = makeBody(sversion)
-	appendString(sversion)
-
-	srelease = makeBody(srelease)
-	appendString(srelease)
-
+	appendString(makeTop(sname))
+	appendString(makeBody(sdate))
+	appendString(makeBody(sversion))
+	appendString(makeBody(srelease))
 	appendString(makeBottom())
 
 	//print all to stdOutput
