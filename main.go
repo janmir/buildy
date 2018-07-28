@@ -31,6 +31,7 @@ var (
 
 	cflag = pflag.CustomFlagSet(rfg("%s", _name), false, errors.New("\n "))
 
+	name    = cflag.String("name", _name, "Application name.")
 	date    = cflag.String("date", _date, "Date string format. [Mon Jan 2 15:04:05 -0700 MST 2006]")
 	build   = cflag.String("build", _build, "Build string. [Alpha, Beta, Dev ...]")
 	version = cflag.String("version", _version, "Version string SemVer/Custom string.[v0.0.0, 0.0.0-%m%d%Y]")
@@ -94,7 +95,7 @@ func main() {
 	logger(rfg("%s", "Debug Mode"))
 
 	//Add name
-	sname += _name
+	sname += *name
 
 	//Measure length first before appending
 	now := time.Now().Local()
